@@ -18,6 +18,7 @@
 		EA29245F2027214F0071E84C /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29245E2027214F0071E84C /* ImageSelectViewController.swift */; };
 		EA2924612027216A0071E84C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2924602027216A0071E84C /* PostViewController.swift */; };
 		EA2924632027217E0071E84C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2924622027217E0071E84C /* SettingViewController.swift */; };
+		EA33A453202733E100AB6D35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA33A452202733E100AB6D35 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EA29245E2027214F0071E84C /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
 		EA2924602027216A0071E84C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		EA2924622027217E0071E84C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EA33A452202733E100AB6D35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				EA29245E2027214F0071E84C /* ImageSelectViewController.swift */,
 				EA2924602027216A0071E84C /* PostViewController.swift */,
 				EA2924622027217E0071E84C /* SettingViewController.swift */,
+				EA33A452202733E100AB6D35 /* GoogleService-Info.plist */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA2924532027200B0071E84C /* LaunchScreen.storyboard in Resources */,
+				EA33A453202733E100AB6D35 /* GoogleService-Info.plist in Resources */,
 				EA2924502027200B0071E84C /* Assets.xcassets in Resources */,
 				EA29244E2027200B0071E84C /* Main.storyboard in Resources */,
 			);
@@ -182,10 +186,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Instagram/Pods-Instagram-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController/ESTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

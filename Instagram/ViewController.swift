@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Fumitaka Hijino. All rights reserved.
 //
 
+import Firebase
+import FirebaseAuth
 import UIKit
 import ESTabBarController
 
@@ -23,6 +25,17 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // currentUserがnilならログインしていない
+        if Auth.auth().currentUser == nil {
+            // ログインしていないときの処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)
+        }
     }
 
     
