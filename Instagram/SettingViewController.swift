@@ -10,6 +10,15 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    
+    @IBOutlet weak var displayNameTextField: UITextField!
+    
+    @IBAction func handleChangeButton(_ sender: Any) {
+    }
+    
+    @IBAction func handleLogoutButton(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
