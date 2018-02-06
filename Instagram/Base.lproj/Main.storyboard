@@ -183,13 +183,63 @@
                     <view key="view" contentMode="scaleToFill" id="9ZE-0e-j34">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-Fu-EKF">
+                                <rect key="frame" x="37" y="180" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="VOj-jd-x0t"/>
+                                </constraints>
+                                <state key="normal" title="投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handlePostButton:" destination="kwY-nB-oYU" eventType="touchUpInside" id="dYr-so-YlV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqg-dx-9f4">
+                                <rect key="frame" x="37" y="230" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Sj8-PQ-TuI"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleCancelButton:" destination="kwY-nB-oYU" eventType="touchUpInside" id="Lyk-l7-0BF"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bWX-bk-20M">
+                                <rect key="frame" x="10" y="40" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="3bI-nN-517"/>
+                                    <constraint firstAttribute="height" constant="120" id="hIk-qg-6Ia"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="キャプション" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ps-cm-Hz5">
+                                <rect key="frame" x="140" y="130" width="225" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HGW-wc-HhE" firstAttribute="trailing" secondItem="5ps-cm-Hz5" secondAttribute="trailing" constant="10" id="1qr-O5-yjc"/>
+                            <constraint firstItem="bWX-bk-20M" firstAttribute="top" secondItem="HGW-wc-HhE" secondAttribute="top" constant="20" id="6Zz-hd-oVJ"/>
+                            <constraint firstItem="Wvn-Fu-EKF" firstAttribute="centerX" secondItem="9ZE-0e-j34" secondAttribute="centerX" id="AkJ-AT-Ndw"/>
+                            <constraint firstItem="bWX-bk-20M" firstAttribute="leading" secondItem="HGW-wc-HhE" secondAttribute="leading" constant="10" id="D8w-QZ-9X4"/>
+                            <constraint firstItem="5ps-cm-Hz5" firstAttribute="leading" secondItem="bWX-bk-20M" secondAttribute="trailing" constant="10" id="EDx-8C-fR5"/>
+                            <constraint firstItem="Cqg-dx-9f4" firstAttribute="top" secondItem="Wvn-Fu-EKF" secondAttribute="bottom" constant="10" id="Nsf-Ph-8bg"/>
+                            <constraint firstItem="Cqg-dx-9f4" firstAttribute="centerX" secondItem="9ZE-0e-j34" secondAttribute="centerX" id="PCh-2Q-mWX"/>
+                            <constraint firstItem="Wvn-Fu-EKF" firstAttribute="top" secondItem="5ps-cm-Hz5" secondAttribute="bottom" constant="20" id="Ze4-N2-zr6"/>
+                            <constraint firstItem="5ps-cm-Hz5" firstAttribute="bottom" secondItem="bWX-bk-20M" secondAttribute="bottom" id="ztd-so-R1m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HGW-wc-HhE"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="bWX-bk-20M" id="e7h-6V-Evf"/>
+                        <outlet property="textField" destination="5ps-cm-Hz5" id="Thh-Nj-yYB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ohg-JM-mi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950" y="134"/>
+            <point key="canvasLocation" x="2949.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="6i4-h4-KWL">
