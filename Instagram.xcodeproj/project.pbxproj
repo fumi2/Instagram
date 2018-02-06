@@ -19,6 +19,7 @@
 		EA2924612027216A0071E84C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2924602027216A0071E84C /* PostViewController.swift */; };
 		EA2924632027217E0071E84C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2924622027217E0071E84C /* SettingViewController.swift */; };
 		EA33A453202733E100AB6D35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA33A452202733E100AB6D35 /* GoogleService-Info.plist */; };
+		EA3A546320292E70006B08FA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A546220292E70006B08FA /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EA2924602027216A0071E84C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		EA2924622027217E0071E84C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		EA33A452202733E100AB6D35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EA3A546220292E70006B08FA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				EA2924602027216A0071E84C /* PostViewController.swift */,
 				EA2924622027217E0071E84C /* SettingViewController.swift */,
 				EA33A452202733E100AB6D35 /* GoogleService-Info.plist */,
+				EA3A546220292E70006B08FA /* Const.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				EA29244B2027200B0071E84C /* ViewController.swift in Sources */,
 				EA2924492027200B0071E84C /* AppDelegate.swift in Sources */,
 				EA29245F2027214F0071E84C /* ImageSelectViewController.swift in Sources */,
+				EA3A546320292E70006B08FA /* Const.swift in Sources */,
 				EA2924632027217E0071E84C /* SettingViewController.swift in Sources */,
 				EA29245D2027211E0071E84C /* HomeViewController.swift in Sources */,
 			);
