@@ -128,13 +128,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
         
-        // セル内のボタンのアクションをソースコードで設定する
+        // セル内のボタン（いいねボタン）のアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        
+        // セル内のボタン（コメントボタン）のアクションをソースコードで設定する
+        cell.handleCommentButton.addTarget(self, action: #selector(commentButton(_:forEvent:)), for: .touchUpInside)
         
         return cell
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    // セル内のボタン（いいねボタン）がタップされた時に呼ばれるメソッド
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました。")
         
@@ -170,6 +173,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
+    
+    
+    
+    // セル内のボタン（コメントボタン）がタップされた時に呼ばれるメソッド
+    @objc func commentButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: コメントボタンがタップされました。")
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // ボタンが押されたらCommentViewControllerをモーダルで表示する
+        let commentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        commentViewController.indexPath = indexPath // CommentViewControllerにタップされたセルのインデックスを渡す
+        self.present(commentViewController, animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation

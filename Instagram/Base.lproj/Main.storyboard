@@ -313,6 +313,55 @@
             </objects>
             <point key="canvasLocation" x="3641" y="134"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="AN3-S6-jof">
+            <objects>
+                <viewController storyboardIdentifier="Comment" id="XnR-Iv-fhI" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ezo-AS-7Vd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilr-Pg-Krt">
+                                <rect key="frame" x="37" y="140" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="2k9-ZL-z2l"/>
+                                </constraints>
+                                <state key="normal" title="コメントを投稿" backgroundImage="btn"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crW-Zc-udu">
+                                <rect key="frame" x="37" y="190" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="hwD-Mq-z0K"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメントを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sj-jP-Ggj">
+                                <rect key="frame" x="37.5" y="100" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="YaH-b6-f6e"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4sj-jP-Ggj" firstAttribute="top" secondItem="pPY-Cf-9ix" secondAttribute="top" constant="80" id="9JZ-lD-qPK"/>
+                            <constraint firstItem="ilr-Pg-Krt" firstAttribute="centerX" secondItem="ezo-AS-7Vd" secondAttribute="centerX" id="9Ji-HA-nqN"/>
+                            <constraint firstItem="4sj-jP-Ggj" firstAttribute="centerX" secondItem="ezo-AS-7Vd" secondAttribute="centerX" id="CX8-rL-krb"/>
+                            <constraint firstItem="ilr-Pg-Krt" firstAttribute="top" secondItem="4sj-jP-Ggj" secondAttribute="bottom" constant="10" id="Hyo-Xd-BpM"/>
+                            <constraint firstItem="crW-Zc-udu" firstAttribute="centerX" secondItem="ezo-AS-7Vd" secondAttribute="centerX" id="OeA-c3-gaN"/>
+                            <constraint firstItem="crW-Zc-udu" firstAttribute="centerX" secondItem="ezo-AS-7Vd" secondAttribute="centerX" id="hgE-Bz-Fvg"/>
+                            <constraint firstItem="crW-Zc-udu" firstAttribute="top" secondItem="ilr-Pg-Krt" secondAttribute="bottom" constant="10" id="iBG-Js-HtP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pPY-Cf-9ix"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMH-nz-jXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4345" y="134"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
