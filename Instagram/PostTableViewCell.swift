@@ -9,6 +9,8 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
     var commentArray:[CommentData] = []
     
@@ -68,11 +70,13 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         // テーブル行の高さの概算値を設定しておく
         // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
         commentTableView.estimatedRowHeight = UIScreen.main.bounds.width + 45
+
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentArray.count
+        let postData = postData
+        return postData.comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,7 +86,5 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         
         return cell
     }
-    
-    
     
 }
