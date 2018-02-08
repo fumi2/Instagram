@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
     
     
-
+    var postData:PostData!
     var commentArray:[CommentData] = []
     
     @IBOutlet weak var postImageView: UIImageView!
@@ -55,6 +58,8 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
             self.likeButton.setImage(buttonImage, for: .normal)
         }
         
+        self.postData = postData
+        
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
@@ -75,14 +80,17 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let postData = postData
-        return postData.comments.count
+        // この投稿に付いたコメントに絞り込み
+        let commentArrayOfPost = commentArray.filter( { $0.postId == postData.id} )
+        return commentArrayOfPost.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // この投稿に付いたコメントに絞り込み
+        let commentArrayOfPost = commentArray.filter( { $0.postId == postData.id} )
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
-        cell.setCommentData(commentArray[indexPath.row])
+        cell.setCommentData(commentArrayOfPost[indexPath.row])
         
         return cell
     }
