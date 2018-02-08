@@ -8,18 +8,19 @@
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
 
+    var commentArray:[CommentData] = []
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-    
     @IBOutlet weak var handleCommentButton: UIButton!
     
-    
+    @IBOutlet weak var commentTableView: UITableView!
+ 
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,8 +53,28 @@ class PostTableViewCell: UITableViewCell {
             self.likeButton.setImage(buttonImage, for: .normal)
         }
         
+        commentTableView.delegate = self
+        commentTableView.dataSource = self
+        
+        // テーブルセルのタップを無効にする
+        commentTableView.allowsSelection = false
+        
+        let nib = UINib(nibName: "CommentTableViewCell", bundle: nil)
+        commentTableView.register(nib, forCellReuseIdentifier: "CommentCell")
+        
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // セルを取得してデータを設定する
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
+        cell.setCommentData(commentArray[indexPath.row])
+        
+        return cell
+    }
     
     
     

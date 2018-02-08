@@ -327,6 +327,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="2k9-ZL-z2l"/>
                                 </constraints>
                                 <state key="normal" title="コメントを投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentPostButton:" destination="XnR-Iv-fhI" eventType="touchUpInside" id="G8k-ig-eZk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crW-Zc-udu">
                                 <rect key="frame" x="37" y="190" width="300" height="40"/>
@@ -334,6 +337,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="hwD-Mq-z0K"/>
                                 </constraints>
                                 <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentCancelButton:" destination="XnR-Iv-fhI" eventType="touchUpInside" id="Qp9-8x-Vuf"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメントを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sj-jP-Ggj">
                                 <rect key="frame" x="37.5" y="100" width="300" height="30"/>
@@ -357,6 +363,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pPY-Cf-9ix"/>
                     </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="4sj-jP-Ggj" id="vSz-Dq-hCk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMH-nz-jXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
