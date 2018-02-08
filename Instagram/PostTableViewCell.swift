@@ -62,6 +62,13 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         let nib = UINib(nibName: "CommentTableViewCell", bundle: nil)
         commentTableView.register(nib, forCellReuseIdentifier: "CommentCell")
         
+        // テーブル行の高さをAutoLayoutで自動調整する
+        commentTableView.rowHeight = UITableViewAutomaticDimension
+        
+        // テーブル行の高さの概算値を設定しておく
+        // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
+        commentTableView.estimatedRowHeight = UIScreen.main.bounds.width + 45
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

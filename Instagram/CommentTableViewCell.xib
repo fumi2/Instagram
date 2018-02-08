@@ -13,16 +13,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="81" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="Instagram" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="452" height="81"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="Instagram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="452" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="452" height="80.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="452" height="66.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv5-ph-acM">
-                        <rect key="frame" x="30" y="30" width="60" height="21"/>
+                        <rect key="frame" x="30" y="16" width="60" height="35"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="35" id="GUI-54-Ne9"/>
                             <constraint firstAttribute="width" constant="60" id="ugs-T2-5sK"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -30,7 +31,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewx-nj-Ct4">
-                        <rect key="frame" x="100" y="30" width="322" height="21"/>
+                        <rect key="frame" x="100" y="16" width="322" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="Ovh-j1-hof"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,6 +44,7 @@
                     <constraint firstItem="Kv5-ph-acM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3uL-9t-BBn"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Ewx-nj-Ct4" secondAttribute="trailing" constant="10" id="co4-hJ-Qib"/>
                     <constraint firstItem="Ewx-nj-Ct4" firstAttribute="leading" secondItem="Kv5-ph-acM" secondAttribute="trailing" constant="10" id="dfF-p0-mtK"/>
+                    <constraint firstItem="Kv5-ph-acM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="hAK-6i-Jm1"/>
                     <constraint firstItem="Ewx-nj-Ct4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oi3-Ey-XK6"/>
                     <constraint firstItem="Kv5-ph-acM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="z0J-ku-Sig"/>
                 </constraints>
@@ -49,7 +54,7 @@
                 <outlet property="commentLabel" destination="Ewx-nj-Ct4" id="MWV-1L-EH5"/>
                 <outlet property="nameLabel" destination="Kv5-ph-acM" id="mhl-o1-Fnx"/>
             </connections>
-            <point key="canvasLocation" x="52" y="86.5"/>
+            <point key="canvasLocation" x="52" y="93.5"/>
         </tableViewCell>
     </objects>
 </document>

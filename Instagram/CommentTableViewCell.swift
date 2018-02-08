@@ -29,26 +29,10 @@ class CommentTableViewCell: UITableViewCell {
     }
     
     func setCommentData(_ commentData: CommentData) {
-        self.nameLabel.text = commentData.commentatorId
+        // コメントしたユーザー名を代入
+        self.nameLabel.text = commentData.commentatorName
+        self.commentLabel.text = commentData.commentContent
         
-            
-            
-        self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
-        let likeNumber = postData.likes.count
-        likeLabel.text = "\(likeNumber)"
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        let dateString = formatter.string(from: postData.date!)
-        self.dateLabel.text = dateString
-        
-        if postData.isLiked {
-            let buttonImage = UIImage(named: "like_exist")
-            self.likeButton.setImage(buttonImage, for: .normal)
-        } else {
-            let buttonImage = UIImage(named: "like_none")
-            self.likeButton.setImage(buttonImage, for: .normal)
-        }
     }
     
     
