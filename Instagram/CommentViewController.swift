@@ -14,9 +14,9 @@ import SVProgressHUD
 
 class CommentViewController: UIViewController {
 
-    var postArray: [PostData] = []
-    var indexPath: IndexPath!
-    
+    //var postArray: [PostData] = []
+    //var indexPath: IndexPath!
+    var postData: PostData!
     
     @IBOutlet weak var commentTextField: UITextField!
     
@@ -34,7 +34,7 @@ class CommentViewController: UIViewController {
         // Firebaseの保存先を設定
         let commentRef = Database.database().reference().child(Const.CommentPath)
         // Firebaseに保存するデータ（辞書）を作成
-        let commentData = ["commentContent": commentContent, "commentatorId": commentatorId, "commentatorName": commentatorName, "postId": postArray[indexPath.row].id]
+        let commentData = ["commentContent": commentContent, "commentatorId": commentatorId, "commentatorName": commentatorName, "postId": postData.id]
         // Firebaseに保存する
         commentRef.childByAutoId().setValue(commentData)
         

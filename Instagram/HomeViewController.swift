@@ -187,7 +187,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // ボタンが押されたらCommentViewControllerをモーダルで表示する
         let commentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
-        commentViewController.indexPath = indexPath // CommentViewControllerにタップされたセルのインデックスを渡す
+        commentViewController.postData = postArray[(indexPath?.row)!] // CommentViewControllerにタップされたセルのインデックスを渡す
         self.present(commentViewController, animated: true, completion: nil)
     }
     

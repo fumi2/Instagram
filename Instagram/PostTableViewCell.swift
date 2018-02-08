@@ -64,7 +64,7 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         commentTableView.dataSource = self
         
         // テーブルセルのタップを無効にする
-        commentTableView.allowsSelection = false
+        //commentTableView.allowsSelection = false
         
         let nib = UINib(nibName: "CommentTableViewCell", bundle: nil)
         commentTableView.register(nib, forCellReuseIdentifier: "CommentCell")
@@ -74,7 +74,7 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         
         // テーブル行の高さの概算値を設定しておく
         // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
-        commentTableView.estimatedRowHeight = UIScreen.main.bounds.width + 45
+        commentTableView.estimatedRowHeight = 20
 
         
     }
