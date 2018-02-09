@@ -59,6 +59,16 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         }
         
         self.postData = postData
+        self.commentArray = self.postData.comments
+        print("DEBUG_PRINT: \(self.commentArray)")
+        //Database.database().reference().child(Const.CommentPath).observeSingleEvent(of: .value, with: {(snapshot) in
+          //  let commentValueDictionary = snapshot.value as? [CommentData]
+          //  self.commentArray = commentValueDictionary! //as! [CommentData]
+          //  print(self.commentArray)
+            
+        //}) { (error) in
+        //    print(error.localizedDescription)
+        //}
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
@@ -81,16 +91,18 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // この投稿に付いたコメントに絞り込み
-        let commentArrayOfPost = commentArray.filter( { $0.postId == postData.id} )
-        return commentArrayOfPost.count
+        //let commentArrayOfPost = self.commentArray.filter( { $0.postId == postData.id} )
+        //return commentArrayOfPost.count
+        
+        return self.commentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // この投稿に付いたコメントに絞り込み
-        let commentArrayOfPost = commentArray.filter( { $0.postId == postData.id} )
+        //let commentArrayOfPost = self.commentArray.filter( { $0.postId == postData.id} )
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
-        cell.setCommentData(commentArrayOfPost[indexPath.row])
+        cell.setCommentData(commentArray[indexPath.row])
         
         return cell
     }
