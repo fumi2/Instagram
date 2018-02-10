@@ -17,7 +17,7 @@ class CommentViewController: UIViewController {
     //var postArray: [PostData] = []
     //var indexPath: IndexPath!
     var postData: PostData!
-    var commentArray: [CommentData]!
+    //var commentArray: [CommentData]!
     
     @IBOutlet weak var commentTextField: UITextField!
     
@@ -43,17 +43,17 @@ class CommentViewController: UIViewController {
         // コメントを付与する投稿についてのFirebaseの保存先を設定
         let postRef = Database.database().reference().child(Const.PostPath).child(self.postData.id!)
         
-        let commentArray = self.postData.comments as [Any]
-        var comments = [CommentData]()
-        for c in commentArray {
-            if let commentDictionary = c as? [String: String?] {
-                comments.append(CommentData(dictionary: commentDictionary))
-            }
-        }
-        comments.append(CommentData(dictionary: commentData))
+        var commentArray = self.postData.comments
+        //var comments = [CommentData]()
+        //for c in commentArray {
+        //    if let commentDictionary = c as? [String: String?] {
+        //        comments.append(CommentData(dictionary: commentDictionary))
+        //    }
+        //}
+        commentArray.append(commentData)
         
         // データベースの投稿データに最新のcommentsを保存
-        postRef.updateChildValues(["comments":comments])
+        postRef.updateChildValues(["comments":commentArray])
         print("DEBUG_PRINT: コメントが対象投稿に紐付けられました。")
         
         // HUDで投稿完了を表示する

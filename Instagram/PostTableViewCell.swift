@@ -15,7 +15,7 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
     
     
     var postData:PostData!
-    var commentArray:[CommentData] = []
+    //var commentArray:[CommentData] = []
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
@@ -59,22 +59,15 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         }
         
         self.postData = postData
-        self.commentArray = self.postData.comments
-        print("DEBUG_PRINT: \(self.commentArray)")
-        //Database.database().reference().child(Const.CommentPath).observeSingleEvent(of: .value, with: {(snapshot) in
-          //  let commentValueDictionary = snapshot.value as? [CommentData]
-          //  self.commentArray = commentValueDictionary! //as! [CommentData]
-          //  print(self.commentArray)
-            
-        //}) { (error) in
-        //    print(error.localizedDescription)
-        //}
+        //self.commentArray = self.postData.comments
+        //print("DEBUG_PRINT: \(self.commentArray)")
+        
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
-        // テーブルセルのタップを無効にする
-        //commentTableView.allowsSelection = false
+        //テーブルセルのタップを無効にする
+        commentTableView.allowsSelection = false
         
         let nib = UINib(nibName: "CommentTableViewCell", bundle: nil)
         commentTableView.register(nib, forCellReuseIdentifier: "CommentCell")
@@ -94,7 +87,7 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         //let commentArrayOfPost = self.commentArray.filter( { $0.postId == postData.id} )
         //return commentArrayOfPost.count
         
-        return self.commentArray.count
+        return self.postData.comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +95,7 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         //let commentArrayOfPost = self.commentArray.filter( { $0.postId == postData.id} )
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
-        cell.setCommentData(commentArray[indexPath.row])
+        cell.setCommentData(self.postData.comments[indexPath.row] as! Dictionary<String, String>)
         
         return cell
     }
