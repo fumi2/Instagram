@@ -34,34 +34,26 @@ class CommentViewController: UIViewController {
         let commentatorId = Auth.auth().currentUser?.uid
         
         // コメントについてのFirebaseの保存先を設定
-        let commentRef = Database.database().reference().child(Const.CommentPath)
+        //let commentRef = Database.database().reference().child(Const.CommentPath)
         
         // コメントについてのFirebaseに保存するデータ（辞書）を作成
         let commentData = ["commentContent": commentContent, "commentatorId": commentatorId, "commentatorName": commentatorName, "postId": self.postData.id]
         
-        // コメントをFirebaseに保存する
-        commentRef.childByAutoId().setValue(commentData)
-        print("DEBUG_PRINT: コメントがデータベースに保存されました。")
         
-        // 新しく追加したコメントを付与する投稿についてのFirebaseの保存先を設定
-        let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
+        // コメントを付与する投稿についてのFirebaseの保存先を設定
+        let postRef = Database.database().reference().child(Const.PostPath).child(self.postData.id!)
         
-        // データベースに保存されている全コメントデータの配列を取得
-        Database.database().reference().child(Const.CommentPath).observeSingleEvent(of: .value, with: {(snapshot) in
-            self.commentArray = snapshot.value as! [CommentData]
-            print(self.commentArray)
-        })
-        print(self.commentArray)
-        // 最新の（本メソッドで新たに追加したばかりの）コメントデータの配列番号（最後の配列番号）を取得
-        let commentIndex = commentArray.count - 1
-        // 投稿に付与するコメントデータを取得
-        let commentDataForPost = commentArray[commentIndex]
-        // 投稿データの「comments」プロパティ（コメントデータの配列）に、コメントデータを追加
-        postData.comments.append(commentDataForPost)
-        // 追加後の「comments」プロパティを、（データベースに保存された）投稿データに保存するためのデータを準備
-        let comments = ["comments": postData.comments]
-        //（データベースに保存された）投稿データの「comments」プロパティを更新
-        postRef.updateChildValues(comments)
+        let commentArray = self.postData.comments as [Any]
+        var comments = [CommentData]()
+        for c in commentArray {
+            if let commentDictionary = c as? [String: String?] {
+                comments.append(CommentData(dictionary: commentDictionary))
+            }
+        }
+        comments.append(CommentData(dictionary: commentData))
+        
+        // データベースの投稿データに最新のcommentsを保存
+        postRef.updateChildValues(["comments":comments])
         print("DEBUG_PRINT: コメントが対象投稿に紐付けられました。")
         
         // HUDで投稿完了を表示する
