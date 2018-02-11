@@ -15,7 +15,7 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
     
     
     var postData:PostData!
-    //var commentArray:[CommentData] = []
+    var commentArray:[Any] = []
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
@@ -59,8 +59,8 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         }
         
         self.postData = postData
-        //self.commentArray = self.postData.comments
-        //print("DEBUG_PRINT: \(self.commentArray)")
+        self.commentArray = self.postData.comments
+        
         
         
         commentTableView.delegate = self
@@ -79,6 +79,7 @@ class PostTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSo
         // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
         commentTableView.estimatedRowHeight = 20
 
+        commentTableView.reloadData()
         
     }
     

@@ -7,7 +7,7 @@ target 'Instagram' do
 
   # Pods for Instagram
   pod 'ESTabBarController'
-  #pod 'Firebase', '4.5.0'
+  pod 'Firebase', '4.5.0'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'

@@ -31,9 +31,7 @@ class CommentTableViewCell: UITableViewCell {
     func setCommentData(_ commentData: Dictionary<String, String>) {
         // コメントしたユーザー名を代入
         self.nameLabel.text = commentData["commentatorName"]
-        print("DEBUG_PRINT: \(String(describing: self.nameLabel.text))")
         self.commentLabel.text = commentData["commentContent"]
-        print("DEBUG_PRINT: \(String(describing: self.commentLabel.text))")
     }
     
     
